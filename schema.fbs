@@ -1,0 +1,34 @@
+namespace schema;
+
+enum ClientType: byte {
+  Person,
+  Group
+}
+
+table Person {
+  name: string;
+  age: int;
+  weight: float; // Change "int" to "float"
+  gender: string;
+}
+
+table Group {
+  groupName: string;
+  averageAge: int;
+  averageWeight: float; // Change "int" to "float"
+  names: [string];
+}
+
+table Client {
+  type: ClientType;
+  client:ClientType;
+  person: Person;
+  group: Group;
+}
+
+table ClientList {
+  clients: [Client];
+}
+
+root_type ClientList;
+

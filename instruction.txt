@@ -1,0 +1,47 @@
+
+//make an .fbs file --schema.fbs
+
+
+
+C++
+
+flatc --cpp schema.fbs
+
+//it will generate schema_generated.h file ,include in encode logic
+
+
+
+after that compile using
+
+g++  -o my_program encode.cpp -Iflatbuffers/include -Lflatbuffers -lflatbuffers
+
+
+
+//run 
+./my_program
+
+//file generated [binary file] -fb_bytes.bin
+
+
+
+
+python
+flatc --python schema.fbs
+
+//in schema  folder it will generate all py files  ,include in main decode logic ..also use encoded binary file to decode
+
+
+
+
+//python3 decode.py
+
+//result whatever serialized data on console
+
+
+
+
+
+//install
+flatbuffer install
+
+flatbufffer folder from github
